@@ -258,7 +258,7 @@ footer{
 <div class="page" id="page2">
   <section class="story" style="text-align:center;">
     <h2>Hugot Wall Under the Blue Moon</h2>
-    <div class="story-grid">
+    <div class="story-grid" id="hugotWall">
       <div class="story-box">Even stars leave trails of tears,<br>Love fades away through all the years.</div>
       <div class="story-box">The moon whispers secrets in the night,<br>Hearts that wander search for light.</div>
       <div class="story-box">Some hugs break hearts with gentle sway,<br>Some smiles hide the pain away.</div>
@@ -310,16 +310,21 @@ const lines = [
 function typeLine(elementId, text, speed = 50, callback){
   let i = 0;
   const el = document.getElementById(elementId);
+  el.innerHTML = ""; // prevent duplication on reload
+
   function typing(){
     if(i < text.length){
       el.innerHTML += text.charAt(i);
       i++;
       setTimeout(typing, speed);
-    } else if(callback){ callback(); }
+    } else if(callback){
+      callback();
+    }
   }
   typing();
 }
 
+// Run typing effect
 typeLine("line1", lines[0], 40, ()=>{
   typeLine("line2", lines[1], 40, ()=>{
     typeLine("line3", lines[2], 40, ()=>{
@@ -328,19 +333,78 @@ typeLine("line1", lines[0], 40, ()=>{
   });
 });
 
-// Add hugot note
+
+// ✅ Save hugot note to localStorage
 function addNote(){
-  const note=document.getElementById('note').value;
-  if(note.trim()==='') return;
-  const display=document.getElementById('notesDisplay');
-  const p=document.createElement('p');
-  p.textContent='💔 '+note;
-  p.style.position='absolute';
-  p.style.top=Math.random()*50 + 'vh';
-  p.style.left=Math.random()*80 + 'vw';
-  display.appendChild(p);
-  document.getElementById('note').value='';
+  const noteInput = document.getElementById('note');
+  const note = noteInput.value.trim();
+
+  if(note === '') return;
+
+  // get existing notes
+  let notes = JSON.parse(localStorage.getItem('hugotNotes')) || [];
+
+  // add new note
+  notes.push(note);
+
+  // save notes
+  localStorage.setItem('hugotNotes', JSON.stringify(notes));
+
+  // update display
+  displayNotes();
+
+  noteInput.value = '';
 }
+
+
+// ✅ Display saved hugot notes
+function displayNotes(){
+
+  // Page 1 floating display
+  const display = document.getElementById('notesDisplay');
+  display.innerHTML = '';
+
+  // Page 2 wall display
+  const wall = document.getElementById('hugotWall');
+
+  // Keep original wall quotes safe
+  const originalQuotes = wall.querySelectorAll('.original');
+  
+  // Remove only user-added notes
+  const oldUserNotes = wall.querySelectorAll('.user-note');
+  oldUserNotes.forEach(el => el.remove());
+
+  let notes = JSON.parse(localStorage.getItem('hugotNotes')) || [];
+
+  notes.forEach(note => {
+
+    // PAGE 1 floating notes
+    const p = document.createElement('p');
+    p.textContent = '💔 ' + note;
+    p.style.position='absolute';
+    p.style.top=Math.random()*50 + 'vh';
+    p.style.left=Math.random()*80 + 'vw';
+    display.appendChild(p);
+
+    // PAGE 2 wall notes
+    const box = document.createElement('div');
+    box.className = 'story-box user-note';
+    box.textContent = note;
+
+    wall.appendChild(box);
+
+  });
+
+}
+
+
+
+// Optional clear function
+function clearNotes(){
+  localStorage.removeItem('hugotNotes');
+  displayNotes();
+}
+
 
 // Page navigation
 function goToPage(pageId){
@@ -349,15 +413,27 @@ function goToPage(pageId){
   document.getElementById(pageId).style.display='block';
 }
 
-// Autoplay music safely
+
+// Autoplay music safely + load notes
 window.addEventListener('DOMContentLoaded', ()=>{
+
   const music = document.getElementById('bgMusic');
+
   const playPromise = music.play();
+
   if(playPromise !== undefined){
-    playPromise.then(()=>console.log('🎵 Multo.mp3 is playing!'))
-      .catch(()=>{document.body.addEventListener('click', ()=>music.play(), {once:true});});
+    playPromise
+      .then(()=>console.log('🎵 Multo.mp3 is playing!'))
+      .catch(()=>{
+        document.body.addEventListener('click', ()=>music.play(), {once:true});
+      });
   }
+
+  // ✅ load saved hugot notes
+  displayNotes();
+
 });
 </script>
+
 </body>
 </html>
