@@ -349,14 +349,20 @@ function addNote(){
 
 // Create floating hugot (page 1)
 function createFloating(note){
-  const display=document.getElementById('notesDisplay');
-  const p=document.createElement('p');
-  p.textContent='💔 '+note;
-  p.style.position='absolute';
-  p.style.top=Math.random()*50 + 'vh';
-  p.style.left=Math.random()*80 + 'vw';
+  const display = document.getElementById('notesDisplay');
+  const p = document.createElement('p');
+
+  p.textContent = '💔 ' + note;
+  p.style.position = 'absolute';
+  p.style.top = Math.random() * 60 + 'vh';
+  p.style.left = Math.random() * 80 + 'vw';
+
+  // 🔥 This restores the original floating motion variety
+  p.style.animationDuration = (5 + Math.random() * 15) + 's';
+
   display.appendChild(p);
 }
+
 
 // Create hugot wall box (page 2)
 function createWall(note){
@@ -399,3 +405,4 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 </body>
 </html>
+
