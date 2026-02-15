@@ -9,177 +9,299 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:'Poppins',sans-serif;
-  background: radial-gradient(circle at top, #1B1F4A 0%, #0D0F2D 100%);
-  color:#E6E8FA;
-  overflow-x:hidden;
-  position:relative;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-a{text-decoration:none;color:inherit;}
+body{
+font-family:'Poppins',sans-serif;
+background: radial-gradient(circle at top, #1B1F4A 0%, #0D0F2D 100%);
+color:#E6E8FA;
+overflow-x:hidden;
+position:relative;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
 
 /* Stars */
+
 .star{
-  position:absolute;
-  background:white;
-  border-radius:50%;
-  opacity:0.8;
-  animation:twinkle 2s infinite alternate;
+position:absolute;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:twinkle 2s infinite alternate;
 }
 
 @keyframes twinkle{
-  0%{opacity:0.3;}
-  50%{opacity:1;}
-  100%{opacity:0.3;}
+
+0%{opacity:0.3;}
+50%{opacity:1;}
+100%{opacity:0.3;}
+
 }
+
 
 /* Pages */
+
 .page{
-  display:none;
-  padding-bottom:50px;
+display:none;
+padding-bottom:50px;
 }
 
+
 /* Header */
+
 header{
-  position: relative;
-  height:100vh;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+position: relative;
+height:100vh;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+overflow:hidden;
 }
 
 header h1{
-  font-family:'Playfair Display',serif;
-  font-size:3rem;
-  margin-bottom:20px;
-  color:#B49FCC;
+
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-bottom:20px;
+color:#B49FCC;
+animation:fadeInUp 2s ease forwards;
+
 }
 
 header p{
-  font-size:1.2rem;
-  max-width:600px;
-  margin-bottom:40px;
+
+font-size:1.2rem;
+max-width:600px;
+margin:0 auto 40px auto;
+line-height:1.5;
+animation:fadeInUp 2.5s ease forwards;
+
 }
 
 .cta-btn{
-  padding:12px 30px;
-  background:#FFCAD4;
-  color:#1B1F4A;
-  font-weight:600;
-  border-radius:30px;
-  cursor:pointer;
-  box-shadow:0 0 10px #FFCAD4;
+
+padding:12px 30px;
+background:#FFCAD4;
+color:#1B1F4A;
+font-weight:600;
+border-radius:30px;
+cursor:pointer;
+box-shadow:0 0 10px #FFCAD4;
+transition:all 0.3s ease;
+
 }
+
+.cta-btn:hover{
+
+box-shadow:0 0 25px #FFCAD4;
+transform:scale(1.1) rotate(-2deg);
+
+}
+
 
 /* Moon */
+
 .moon{
-  position:absolute;
-  top:15%;
-  right:10%;
-  width:150px;
-  height:150px;
-  background: radial-gradient(circle, #AFCBFF, #4169E1);
-  border-radius:50%;
-  box-shadow:0 0 30px #AFCBFF;
+
+position:absolute;
+top:15%;
+right:10%;
+width:150px;
+height:150px;
+background: radial-gradient(circle, #AFCBFF 0%, #4169E1 80%);
+border-radius:50%;
+box-shadow:0 0 30px #AFCBFF;
+animation:glowMoon 3s infinite alternate;
+
 }
 
+@keyframes glowMoon{
+
+0%{box-shadow:0 0 30px #AFCBFF;}
+50%{box-shadow:0 0 50px #E6E8FA;}
+100%{box-shadow:0 0 30px #AFCBFF;}
+
+}
+
+
 /* Story */
+
 .story{
-  padding:80px 20px;
-  text-align:center;
+
+padding:80px 20px;
+text-align:center;
+
 }
 
 .story h2{
-  font-size:2.5rem;
-  margin-bottom:30px;
-  color:#FFCAD4;
+
+font-family:'Playfair Display',serif;
+font-size:2.5rem;
+margin-bottom:30px;
+color:#FFCAD4;
+
+}
+
+.story p{
+
+font-size:1.2rem;
+max-width:700px;
+margin:20px auto;
+line-height:1.6;
+
 }
 
 .hugot{
-  color:#FF99CC;
-  font-style:italic;
+
+color:#FF99CC;
+font-style:italic;
+
 }
 
-/* Note section */
+
+/* Notes */
+
 .note-section{
-  background: rgba(255,202,212,0.05);
-  padding:60px 20px;
-  text-align:center;
+
+background: rgba(255,202,212,0.05);
+padding:60px 20px;
+text-align:center;
+
 }
 
 textarea{
-  width:80%;
-  max-width:600px;
-  padding:12px;
-  border-radius:10px;
-  border:none;
+
+width:80%;
+max-width:600px;
+padding:12px;
+border-radius:10px;
+border:none;
+resize:none;
+
 }
 
-/* Floating notes animation */
+.button-group{
+
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+
+}
+
+.button-group button{
+
+padding:10px 25px;
+border-radius:25px;
+border:none;
+cursor:pointer;
+
+}
+
+
+/* Floating notes */
+
 #notesDisplay p{
-  margin:10px auto;
-  max-width:600px;
-  color:#FFCAD4;
-  font-style:italic;
-  animation:floatNote 10s linear infinite;
+
+color:#FFCAD4;
+font-style:italic;
+animation:floatNote linear infinite;
+
 }
 
 @keyframes floatNote{
-  0%{transform:translate(0,0);}
-  25%{transform:translate(10px,-10px);}
-  50%{transform:translate(-10px,-20px);}
-  75%{transform:translate(10px,-10px);}
-  100%{transform:translate(0,0);}
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+
 }
 
-/* Grid wall */
+
+/* Hugot wall */
+
 .story-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+
 }
 
 .story-box{
-  background:#0B3D91;
-  border-radius:15px;
-  padding:20px;
-  font-style:italic;
+
+background:#0B3D91;
+border-radius:15px;
+padding:20px;
+color:#E0F7FF;
+font-style:italic;
+
 }
 
-/* Make wall notes static */
-.user-note{
-  animation:none !important;
-  position:static !important;
+
+/* Footer */
+
+footer{
+
+text-align:center;
+padding:20px;
+color:#B49FCC;
+
 }
 
 </style>
 </head>
+
 <body>
 
+
 <audio id="bgMusic" loop>
-  <source src="Multo.mp3" type="audio/mpeg">
+<source src="Multo.mp3">
 </audio>
 
+
+
 <!-- PAGE 1 -->
+
+
 <div class="page" id="page1" style="display:block;">
 
+
 <header>
+
 <div class="moon"></div>
 
 <h1>Once in a Blue Moon</h1>
 
 <p>Some loves appear only once, bright and fleeting.</p>
 
-<button class="cta-btn" onclick="goToPage('page2')">
-Next Page
-</button>
+<a class="cta-btn" onclick="goToPage('page2')">Read the Hugot Wall</a>
 
 </header>
+
+
+<section class="story">
+
+<h2>The Blue Moon Heartbreak</h2>
+
+<p id="line1" class="hugot"></p>
+<p id="line2" class="hugot"></p>
+<p id="line3" class="hugot"></p>
+<p id="line4" class="hugot"></p>
+
+</section>
+
 
 <section class="note-section">
 
@@ -187,11 +309,13 @@ Next Page
 
 <textarea id="note"></textarea>
 
-<br><br>
+<div class="button-group">
 
-<button onclick="addNote()">
-Send Hugot
-</button>
+<button onclick="addNote()">Send Your Hugot</button>
+
+<button class="cta-btn" onclick="goToPage('page2')">Next Page</button>
+
+</div>
 
 <div id="notesDisplay"></div>
 
@@ -199,174 +323,245 @@ Send Hugot
 
 </div>
 
+
+
+
 <!-- PAGE 2 -->
+
+
 <div class="page" id="page2">
 
 <section class="story">
 
-<h2>Hugot Wall</h2>
+<h2>Hugot Wall Under the Blue Moon</h2>
 
 <div class="story-grid" id="hugotWall">
 
-<div class="story-box">Even stars leave trails of tears</div>
 
-<div class="story-box">Love fades away through years</div>
+<div class="story-box">Even stars leave trails of tears.</div>
+
+<div class="story-box">Love fades away through all the years.</div>
+
+<div class="story-box">The moon whispers secrets in the night.</div>
+
 
 </div>
 
-<br>
 
-<button onclick="goToPage('page1')" class="cta-btn">
-Previous
-</button>
+<button onclick="goToPage('page1')" class="cta-btn">Previous</button>
 
 </section>
 
 </div>
 
+
+
+<footer>
+
+© 2026 Once in a Blue Moon
+
+</footer>
+
+
+
+
 <script>
 
+
 /* Stars */
+
 for(let i=0;i<50;i++){
 
-let star=document.createElement("div");
+let star=document.createElement('div');
 
-star.className="star";
+star.className='star';
 
-star.style.width=Math.random()*3+"px";
-star.style.height=Math.random()*3+"px";
+star.style.width=Math.random()*3+'px';
 
-star.style.top=Math.random()*100+"%";
-star.style.left=Math.random()*100+"%";
+star.style.height=star.style.width;
+
+star.style.top=Math.random()*100+'%';
+
+star.style.left=Math.random()*100+'%';
+
+star.style.animationDuration=(Math.random()*3)+'s';
 
 document.body.appendChild(star);
 
 }
 
-/* Add Hugot */
+
+
+/* Story typing */
+
+
+const lines=[
+
+"She came under the glow of a rare blue moon, but she left before I even learned her name.",
+
+"For one night, our souls intertwined like stars destined to collide.",
+
+"Some loves shine only once in a blue moon.",
+
+"Some people are just passing meteors in your sky."
+
+];
+
+
+function typeLine(id,text,speed,callback){
+
+let i=0;
+
+let el=document.getElementById(id);
+
+function type(){
+
+if(i<text.length){
+
+el.innerHTML+=text[i];
+
+i++;
+
+setTimeout(type,speed);
+
+}else if(callback)callback();
+
+}
+
+type();
+
+}
+
+
+typeLine("line1",lines[0],40,()=>{
+
+typeLine("line2",lines[1],40,()=>{
+
+typeLine("line3",lines[2],40,()=>{
+
+typeLine("line4",lines[3],40);
+
+});
+
+});
+
+});
+
+
+
+/* Add hugot */
+
+
 function addNote(){
 
-const noteInput=document.getElementById("note");
+let note=document.getElementById("note").value.trim();
 
-const note=noteInput.value.trim();
+if(note==="")return;
 
-if(note==="") return;
 
-/* Save */
-let notes=
-JSON.parse(localStorage.getItem("hugotNotes"))||[];
+let notes=JSON.parse(localStorage.getItem("hugotNotes"))||[];
 
 notes.push(note);
 
-localStorage.setItem(
-"hugotNotes",
-JSON.stringify(notes)
-);
+localStorage.setItem("hugotNotes",JSON.stringify(notes));
 
-/* Page 1 floating */
-const display=document.getElementById("notesDisplay");
 
-const p=document.createElement("p");
+createFloating(note);
 
-p.textContent="💔 "+note;
+createWall(note);
 
-p.style.position="absolute";
 
-p.style.top=Math.random()*50+"vh";
-
-p.style.left=Math.random()*80+"vw";
-
-/* random speed */
-p.style.animationDuration=
-(8+Math.random()*10)+"s";
-
-display.appendChild(p);
-
-/* Page 2 wall */
-const wall=document.getElementById("hugotWall");
-
-const box=document.createElement("div");
-
-box.className="story-box user-note";
-
-box.textContent=note;
-
-wall.appendChild(box);
-
-noteInput.value="";
+document.getElementById("note").value="";
 
 }
 
+
+
+function createFloating(note){
+
+let p=document.createElement("p");
+
+p.innerText="💔 "+note;
+
+p.style.position="absolute";
+
+p.style.top=Math.random()*60+"vh";
+
+p.style.left=Math.random()*80+"vw";
+
+p.style.animationDuration=(5+Math.random()*15)+"s";
+
+document.getElementById("notesDisplay").appendChild(p);
+
+}
+
+
+
+function createWall(note){
+
+let box=document.createElement("div");
+
+box.className="story-box";
+
+box.innerText=note;
+
+document.getElementById("hugotWall").appendChild(box);
+
+}
+
+
+
 /* Load saved */
+
+
 function loadNotes(){
 
-let notes=
-JSON.parse(localStorage.getItem("hugotNotes"))||[];
-
-const display=document.getElementById("notesDisplay");
-
-const wall=document.getElementById("hugotWall");
+let notes=JSON.parse(localStorage.getItem("hugotNotes"))||[];
 
 notes.forEach(note=>{
 
-const p=document.createElement("p");
+createFloating(note);
 
-p.textContent="💔 "+note;
-
-p.style.position="absolute";
-
-p.style.top=Math.random()*50+"vh";
-
-p.style.left=Math.random()*80+"vw";
-
-/* random speed */
-p.style.animationDuration=
-(8+Math.random()*10)+"s";
-
-display.appendChild(p);
-
-const box=document.createElement("div");
-
-box.className="story-box user-note";
-
-box.textContent=note;
-
-wall.appendChild(box);
+createWall(note);
 
 });
 
 }
 
+
+
 /* Navigation */
+
+
 function goToPage(id){
 
-document
-.querySelectorAll(".page")
-.forEach(p=>p.style.display="none");
+document.querySelectorAll(".page").forEach(p=>p.style.display="none");
 
-document
-.getElementById(id)
-.style.display="block";
+document.getElementById(id).style.display="block";
 
 }
 
-/* Load */
-window.onload=function(){
+
+
+/* Music + load */
+
+
+window.onload=()=>{
+
+document.getElementById("bgMusic").play().catch(()=>{
+
+document.body.onclick=()=>document.getElementById("bgMusic").play();
+
+});
+
 
 loadNotes();
 
-/* music autoplay safe */
-const music=document.getElementById("bgMusic");
-
-music.play().catch(()=>{
-document.body.onclick=()=>{
-music.play();
 };
-});
 
-};
 
 </script>
+
 
 </body>
 </html>
