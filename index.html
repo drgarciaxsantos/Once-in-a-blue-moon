@@ -4,564 +4,398 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Once in a Blue Moon – Hugot Love</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-font-family:'Poppins',sans-serif;
-background: radial-gradient(circle at top, #1B1F4A 0%, #0D0F2D 100%);
-color:#E6E8FA;
-overflow-x:hidden;
-position:relative;
+  font-family:'Poppins',sans-serif;
+  background: radial-gradient(circle at top, #1B1F4A 0%, #0D0F2D 100%);
+  color:#E6E8FA;
+  overflow-x:hidden;
+  position:relative;
 }
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
+a{text-decoration:none;color:inherit;}
 
 /* Stars */
-
-.star{
-position:absolute;
-background:white;
-border-radius:50%;
-opacity:0.8;
-animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-
-0%{opacity:0.3;}
-50%{opacity:1;}
-100%{opacity:0.3;}
-
-}
-
+.star{position:absolute;background:white;border-radius:50%;opacity:0.8;animation:twinkle 2s infinite alternate;}
+@keyframes twinkle{0%{opacity:0.3;}50%{opacity:1;}100%{opacity:0.3;}}
 
 /* Pages */
-
-.page{
-display:none;
-padding-bottom:50px;
-}
-
+.page{display:none;padding-bottom:50px;}
 
 /* Header */
-
 header{
-position: relative;
-height:100vh;
-text-align:center;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-overflow:hidden;
+  position: relative;
+  height:100vh;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
 }
-
 header h1{
-
-font-family:'Playfair Display',serif;
-font-size:3rem;
-margin-bottom:20px;
-color:#B49FCC;
-animation:fadeInUp 2s ease forwards;
-
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  margin-bottom:20px;
+  color:#B49FCC;
+  animation:fadeInUp 2s ease forwards;
 }
-
 header p{
-
-font-size:1.2rem;
-max-width:600px;
-margin:0 auto 40px auto;
-line-height:1.5;
-animation:fadeInUp 2.5s ease forwards;
-
+  font-size:1.2rem;
+  max-width:600px;
+  margin:0 auto 40px auto;
+  line-height:1.5;
+  animation:fadeInUp 2.5s ease forwards;
 }
-
 .cta-btn{
-
-padding:12px 30px;
-background:#FFCAD4;
-color:#1B1F4A;
-font-weight:600;
-border-radius:30px;
-cursor:pointer;
-box-shadow:0 0 10px #FFCAD4;
-transition:all 0.3s ease;
-
+  padding:12px 30px;
+  background:#FFCAD4;
+  color:#1B1F4A;
+  font-weight:600;
+  border-radius:30px;
+  cursor:pointer;
+  box-shadow:0 0 10px #FFCAD4;
+  transition:all 0.3s ease;
 }
-
 .cta-btn:hover{
-
-box-shadow:0 0 25px #FFCAD4;
-transform:scale(1.1) rotate(-2deg);
-
+  box-shadow:0 0 25px #FFCAD4;
+  transform:scale(1.1) rotate(-2deg);
 }
 
-
-/* Moon */
-
+/* Blue Moon */
 .moon{
-
-position:absolute;
-top:15%;
-right:10%;
-width:150px;
-height:150px;
-background: radial-gradient(circle, #AFCBFF 0%, #4169E1 80%);
-border-radius:50%;
-box-shadow:0 0 30px #AFCBFF;
-animation:glowMoon 3s infinite alternate;
-
+  position:absolute;
+  top:15%;
+  right:10%;
+  width:150px;
+  height:150px;
+  background: radial-gradient(circle, #AFCBFF 0%, #4169E1 80%);
+  border-radius:50%;
+  box-shadow:0 0 30px #AFCBFF;
+  animation:glowMoon 3s infinite alternate;
 }
-
 @keyframes glowMoon{
-
-0%{box-shadow:0 0 30px #AFCBFF;}
-50%{box-shadow:0 0 50px #E6E8FA;}
-100%{box-shadow:0 0 30px #AFCBFF;}
-
+  0%{box-shadow:0 0 30px #AFCBFF;}
+  50%{box-shadow:0 0 50px #E6E8FA;}
+  100%{box-shadow:0 0 30px #AFCBFF;}
 }
-
 
 /* Story */
-
 .story{
-
-padding:80px 20px;
-text-align:center;
-
+  padding:80px 20px;
+  text-align:center;
 }
-
 .story h2{
-
-font-family:'Playfair Display',serif;
-font-size:2.5rem;
-margin-bottom:30px;
-color:#FFCAD4;
-
+  font-family:'Playfair Display',serif;
+  font-size:2.5rem;
+  margin-bottom:30px;
+  color:#FFCAD4;
 }
-
 .story p{
-
-font-size:1.2rem;
-max-width:700px;
-margin:20px auto;
-line-height:1.6;
-
+  font-size:1.2rem;
+  max-width:700px;
+  margin:20px auto;
+  line-height:1.6;
+  color:#E6E8FA;
 }
+.hugot{color:#FF99CC;font-style:italic;}
 
-.hugot{
-
-color:#FF99CC;
-font-style:italic;
-
-}
-
-
-/* Notes */
-
+/* Note section */
 .note-section{
-
-background: rgba(255,202,212,0.05);
-padding:60px 20px;
-text-align:center;
-
+  background: rgba(255,202,212,0.05);
+  padding:60px 20px;
+  text-align:center;
+}
+.note-section h3{
+  font-family:'Great Vibes', cursive;
+  font-size:2rem;
+  margin-bottom:20px;
+  color:#B49FCC;
+}
+.note-section textarea{
+  width:80%;
+  max-width:600px;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  resize:none;
+  font-size:1rem;
 }
 
-textarea{
-
-width:80%;
-max-width:600px;
-padding:12px;
-border-radius:10px;
-border:none;
-resize:none;
-
+/* Buttons side by side */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
-
-.button-group{
-
-display:flex;
-justify-content:center;
-gap:15px;
-margin-top:20px;
-
-}
-
 .button-group button{
-
-padding:10px 25px;
-border-radius:25px;
-border:none;
-cursor:pointer;
-
+  padding:10px 25px;
+  border-radius:25px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition:all 0.3s ease;
 }
-
-
-/* Floating notes */
+.button-group button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px #FFCAD4;
+}
+.button-group .cta-btn{
+  background:#FFCAD4;
+  color:#1B1F4A;
+}
 
 #notesDisplay p{
-
-color:#FFCAD4;
-font-style:italic;
-animation:floatNote linear infinite;
-
+  margin:10px auto;
+  max-width:600px;
+  color:#FFCAD4;
+  font-style:italic;
+  position:relative;
+  animation:floatNote 10s linear infinite;
 }
-
-@keyframes floatNote{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
-
-}
-
-
-/* Hugot wall */
-
-.story-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-
-}
-
-.story-box{
-
-background:#0B3D91;
-border-radius:15px;
-padding:20px;
-color:#E0F7FF;
-font-style:italic;
-
-}
-
 
 /* Footer */
-
 footer{
-
-text-align:center;
-padding:20px;
-color:#B49FCC;
-
+  text-align:center;
+  padding:20px;
+  font-size:0.9rem;
+  color:#B49FCC;
 }
+
+/* Animations */
+@keyframes fadeInUp{
+  0%{opacity:0; transform:translateY(20px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+@keyframes floatNote{
+  0%{transform:translateY(0) translateX(0);}
+  25%{transform:translateY(-10px) translateX(10px);}
+  50%{transform:translateY(-20px) translateX(-10px);}
+  75%{transform:translateY(-10px) translateX(10px);}
+  100%{transform:translateY(0) translateX(0);}
+}
+
+@media(max-width:768px){
+  header h1{ font-size:2.2rem; }
+  .story h2{ font-size:2rem; }
+}
+
+/* Grid container for story boxes */
+/* Grid container for story boxes */
+/* Grid container for story boxes */
+/* Grid container for story boxes */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+  gap: 40px; /* increased from 20px to 40px for more spacing */
+  padding: 20px 0;
+}
+
+/* Individual story boxes */
+/* Individual story boxes */
+.story-box {
+  background: #0B3D91; /* dark blue background */
+  border-radius: 15px;
+  padding: 20px;
+  font-style: italic;
+  color: #E0F7FF; /* light blue text for contrast */
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #1E88E5; /* subtle blue glow */
+}
+
+.story-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #42A5F5; /* stronger glow on hover */
+  cursor: default;
+}
+
+
 
 </style>
 </head>
-
 <body>
 
-
+<!-- Background Music -->
 <audio id="bgMusic" loop>
-<source src="Multo.mp3">
+  <source src="Multo.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
 
-
-
-<!-- PAGE 1 -->
-
-
+<!-- Page 1 -->
 <div class="page" id="page1" style="display:block;">
+  <header>
+    <div class="moon"></div>
+    <h1>Once in a Blue Moon</h1>
+    <p>Some loves appear only once, bright and fleeting. Some heartbreaks linger like moonlight in our hearts.</p>
+    <a href="#story" class="cta-btn">Read the Hugot Story</a>
+  </header>
 
+  <section class="story" id="story">
+    <h2>The Blue Moon Heartbreak</h2>
+    <p id="line1" class="hugot"></p>
+    <p id="line2" class="hugot"></p>
+    <p id="line3" class="hugot"></p>
+    <p id="line4" class="hugot"></p>
+  </section>
 
-<header>
-
-<div class="moon"></div>
-
-<h1>Once in a Blue Moon</h1>
-
-<p>Some loves appear only once, bright and fleeting.</p>
-
-<a class="cta-btn" onclick="goToPage('page2')">Read the Hugot Wall</a>
-
-</header>
-
-
-<section class="story">
-
-<h2>The Blue Moon Heartbreak</h2>
-
-<p id="line1" class="hugot"></p>
-<p id="line2" class="hugot"></p>
-<p id="line3" class="hugot"></p>
-<p id="line4" class="hugot"></p>
-
-</section>
-
-
-<section class="note-section">
-
-<h3>Leave Your Hugot</h3>
-
-<textarea id="note"></textarea>
-
-<div class="button-group">
-
-<button onclick="addNote()">Send Your Hugot</button>
-
-<button class="cta-btn" onclick="goToPage('page2')">Next Page</button>
-
+  <section class="note-section">
+    <h3>Leave Your Hugot</h3>
+    <textarea id="note" rows="5" placeholder="Share your hugot..."></textarea>
+    <div class="button-group">
+      <button onclick="addNote()">Send Your Hugot</button>
+      <button class="cta-btn" onclick="goToPage('page2')">Next Page</button>
+    </div>
+    <div id="notesDisplay"></div>
+  </section>
 </div>
 
-<div id="notesDisplay"></div>
-
-</section>
-
-</div>
-
-
-
-
-<!-- PAGE 2 -->
-
-
+<!-- Page 2 -->
 <div class="page" id="page2">
-
-<section class="story">
-
-<h2>Hugot Wall Under the Blue Moon</h2>
-
-<div class="story-grid" id="hugotWall">
-
-
-<div class="story-box">Even stars leave trails of tears.</div>
-
-<div class="story-box">Love fades away through all the years.</div>
-
-<div class="story-box">The moon whispers secrets in the night.</div>
-
-
+  <section class="story" style="text-align:center;">
+    <h2>Hugot Wall Under the Blue Moon</h2>
+    <div class="story-grid">
+      <div class="story-box">Even stars leave trails of tears,<br>Love fades away through all the years.</div>
+      <div class="story-box">The moon whispers secrets in the night,<br>Hearts that wander search for light.</div>
+      <div class="story-box">Some hugs break hearts with gentle sway,<br>Some smiles hide the pain away.</div>
+      <div class="story-box">Love comes like a comet, bright and fast,<br>Some flames are brief, but never last.</div>
+      <div class="story-box">Tears may fall like drops of rain,<br>Yet hope remains through all the pain.</div>
+      <div class="story-box">Memories linger, soft and clear,<br>In the silent night, I feel you near.</div>
+      <div class="story-box">Lonely hearts beneath the sky so wide,<br>Stars above become our guide.</div>
+      <div class="story-box">Shadows fade, the moon still glows,<br>Some love ends, but the feeling shows.</div>
+      <div class="story-box">Stars above in silver streams,<br>Carry away forgotten dreams.</div>
+      <div class="story-box">Even shadows dance with glee,<br>When hearts remember what used to be.</div>
+      <div class="story-box">In the hush of twilight’s glow,<br>Love leaves whispers we’ll always know.</div>
+      <div class="story-box">Comets streak across the skies,<br>Like fleeting lovers’ final goodbyes.</div>
+      <div class="story-box">Night unfolds a velvet sky,<br>Love may fade but never die.</div>
+      <div class="story-box">Whispers float on gentle breeze,<br>Healing hearts with quiet ease.</div>
+      <div class="story-box">Blue moon glows above our pain,<br>Promising love will bloom again.</div>
+    </div>
+    <div style="text-align:center;margin:30px 0;">
+      <button class="cta-btn" onclick="goToPage('page1')">Previous</button>
+    </div>
+  </section>
 </div>
-
-
-<button onclick="goToPage('page1')" class="cta-btn">Previous</button>
-
-</section>
-
-</div>
-
-
 
 <footer>
-
-© 2026 Once in a Blue Moon
-
+  © 2026 Once in a Blue Moon | Hugot for the Brokenhearted
 </footer>
 
-
-
-
 <script>
-
-
-/* Stars */
-
+// Floating stars
 for(let i=0;i<50;i++){
-
-let star=document.createElement('div');
-
-star.className='star';
-
-star.style.width=Math.random()*3+'px';
-
-star.style.height=star.style.width;
-
-star.style.top=Math.random()*100+'%';
-
-star.style.left=Math.random()*100+'%';
-
-star.style.animationDuration=(Math.random()*3)+'s';
-
-document.body.appendChild(star);
-
+  let star=document.createElement('div');
+  star.className='star';
+  let size=Math.random()*3+1+'px';
+  star.style.width=size;
+  star.style.height=size;
+  star.style.top=Math.random()*100+'%';
+  star.style.left=Math.random()*100+'%';
+  star.style.animationDuration=(Math.random()*2 + 1)+'s';
+  document.body.appendChild(star);
 }
 
-
-
-/* Story typing */
-
-
-const lines=[
-
-"She came under the glow of a rare blue moon, but she left before I even learned her name.",
-
-"For one night, our souls intertwined like stars destined to collide.",
-
-"Some loves shine only once in a blue moon.",
-
-"Some people are just passing meteors in your sky."
-
+// Hugot lines typing effect
+const lines = [
+  "She came under the glow of a rare blue moon, but she left before I even learned her name.",
+  "For one night, our souls intertwined like stars destined to collide, yet morning pulled her away and left me in the dark.",
+  "Some loves shine only once in a blue moon, and some hugs only break your heart in pieces you didn’t know existed.",
+  "I smiled, I laughed, I loved—only to realize that some people are just passing meteors in your sky."
 ];
 
-
-function typeLine(id,text,speed,callback){
-
-let i=0;
-
-let el=document.getElementById(id);
-
-function type(){
-
-if(i<text.length){
-
-el.innerHTML+=text[i];
-
-i++;
-
-setTimeout(type,speed);
-
-}else if(callback)callback();
-
+function typeLine(elementId, text, speed = 50, callback){
+  let i = 0;
+  const el = document.getElementById(elementId);
+  function typing(){
+    if(i < text.length){
+      el.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    } else if(callback){ callback(); }
+  }
+  typing();
 }
 
-type();
-
-}
-
-
-typeLine("line1",lines[0],40,()=>{
-
-typeLine("line2",lines[1],40,()=>{
-
-typeLine("line3",lines[2],40,()=>{
-
-typeLine("line4",lines[3],40);
-
+typeLine("line1", lines[0], 40, ()=>{
+  typeLine("line2", lines[1], 40, ()=>{
+    typeLine("line3", lines[2], 40, ()=>{
+      typeLine("line4", lines[3], 40);
+    });
+  });
 });
 
-});
-
-});
-
-
-
-/* Add hugot */
-
-
+// Add hugot note (NOW SAVES + APPEARS ON PAGE 2)
 function addNote(){
+  const note = document.getElementById('note').value.trim();
+  if(note === '') return;
 
-let note=document.getElementById("note").value.trim();
+  // Save to localStorage
+  let notes = JSON.parse(localStorage.getItem("hugotNotes")) || [];
+  notes.push(note);
+  localStorage.setItem("hugotNotes", JSON.stringify(notes));
 
-if(note==="")return;
+  // Show floating on page 1
+  createFloating(note);
 
+  // Show on page 2 wall
+  createWall(note);
 
-let notes=JSON.parse(localStorage.getItem("hugotNotes"))||[];
-
-notes.push(note);
-
-localStorage.setItem("hugotNotes",JSON.stringify(notes));
-
-
-createFloating(note);
-
-createWall(note);
-
-
-document.getElementById("note").value="";
-
+  document.getElementById('note').value='';
 }
 
-
-
+// Create floating hugot (page 1)
 function createFloating(note){
-
-let p=document.createElement("p");
-
-p.innerText="💔 "+note;
-
-p.style.position="absolute";
-
-p.style.top=Math.random()*60+"vh";
-
-p.style.left=Math.random()*80+"vw";
-
-p.style.animationDuration=(5+Math.random()*15)+"s";
-
-document.getElementById("notesDisplay").appendChild(p);
-
+  const display=document.getElementById('notesDisplay');
+  const p=document.createElement('p');
+  p.textContent='💔 '+note;
+  p.style.position='absolute';
+  p.style.top=Math.random()*50 + 'vh';
+  p.style.left=Math.random()*80 + 'vw';
+  display.appendChild(p);
 }
 
-
-
+// Create hugot wall box (page 2)
 function createWall(note){
-
-let box=document.createElement("div");
-
-box.className="story-box";
-
-box.innerText=note;
-
-document.getElementById("hugotWall").appendChild(box);
-
+  const grid=document.querySelector('.story-grid');
+  const box=document.createElement('div');
+  box.className='story-box';
+  box.textContent=note;
+  grid.appendChild(box);
 }
 
-
-
-/* Load saved */
-
-
+// Load saved hugot after refresh
 function loadNotes(){
-
-let notes=JSON.parse(localStorage.getItem("hugotNotes"))||[];
-
-notes.forEach(note=>{
-
-createFloating(note);
-
-createWall(note);
-
-});
-
+  let notes = JSON.parse(localStorage.getItem("hugotNotes")) || [];
+  notes.forEach(note=>{
+    createFloating(note);
+    createWall(note);
+  });
 }
 
-
-
-/* Navigation */
-
-
-function goToPage(id){
-
-document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-
-document.getElementById(id).style.display="block";
-
+// Page navigation
+function goToPage(pageId){
+  const pages=document.querySelectorAll('.page');
+  pages.forEach(p=>p.style.display='none');
+  document.getElementById(pageId).style.display='block';
 }
 
+// Autoplay music safely + load saved hugot
+window.addEventListener('DOMContentLoaded', ()=>{
+  const music = document.getElementById('bgMusic');
+  const playPromise = music.play();
+  if(playPromise !== undefined){
+    playPromise.then(()=>console.log('🎵 Multo.mp3 is playing!'))
+      .catch(()=>{document.body.addEventListener('click', ()=>music.play(), {once:true});});
+  }
 
-
-/* Music + load */
-
-
-window.onload=()=>{
-
-document.getElementById("bgMusic").play().catch(()=>{
-
-document.body.onclick=()=>document.getElementById("bgMusic").play();
-
+  // Load saved hugot when page refreshes
+  loadNotes();
 });
-
-
-loadNotes();
-
-};
-
-
 </script>
-
 
 </body>
 </html>
